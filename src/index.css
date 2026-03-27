@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+:root {
+  --color-bg: #0a0502;
+  --color-accent: #ff4e00;
+  --glass-surface: rgba(10, 8, 5, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #e0d8d0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6a26;
+}
+
+.atmosphere {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% 30%, #3a1510 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, var(--color-accent) 0%, transparent 50%);
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glass-panel {
+  background: rgba(15, 12, 10, 0.95);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.story-text {
+  font-family: var(--font-serif);
+  line-height: 1.8;
+  color: rgba(224, 216, 208, 0.95);
+}
+
+.choice-button {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(20, 18, 15, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.choice-button:hover {
+  background: rgba(35, 32, 28, 1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.image-mask {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
