@@ -66,12 +66,12 @@ export default function App() {
         setIsDecodeUnlocked(true);
         localStorage.setItem('decode_unlocked', 'true');
         
-        // Generate hint
-        const hint = Object.entries(collectedMemories)
-          .sort(([a], [b]) => parseInt(a) - parseInt(b))
-          .map(([_, m]) => m.letter)
-          .join('');
-        setHintText(hint);
+        // Generate random hint instead of the correct one
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const randomHint = Array.from({ length: 13 }, () => 
+          characters.charAt(Math.floor(Math.random() * characters.length))
+        ).join('');
+        setHintText(randomHint);
         setShowHint(true);
       }, 5000); // 5 seconds
       return () => clearTimeout(timer);
