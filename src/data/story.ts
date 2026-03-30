@@ -34,7 +34,6 @@ export const STORY_DATA: Record<string, StoryNode> = {
     id: 'check_under_feet',
     text: 'Bạn cúi người xuống kiểm tra xem thứ mình dẫm phải là gì. Một hỗn hợp của chất lỏng và những mảnh vụn của thứ gì đó trộn lẫn bên trong tạo nên một cảm giác dinh dính đầy kinh tởm. Và mùi của nó bắt đầu bốc lên gây cho bạn một cảm giác buồn nôn. Cứ như ai đó đổ một nồi súp thịt băm ra sàn tối hôm qua vậy. Không. Có lẽ là mười nồi thì đúng hơn. Bởi vì trong bóng tối, bạn nhận ra thứ đó trải đầy khắp phòng.',
     choices: [
-      { text: 'Sợ hãi quay lại giường', nextNodeId: 'back_to_bed' },
       { text: 'Kiểm tra tủ đầu giường', nextNodeId: 'check_nightstand' }
     ],
     image: 'https://picsum.photos/seed/disgusting-floor/1200/800',
@@ -97,7 +96,8 @@ export const STORY_DATA: Record<string, StoryNode> = {
     image: 'https://picsum.photos/seed/mystery/1200/800',
     imagePrompt: 'A surreal, dreamlike landscape where a path of white stones leads into a thick, glowing fog. Strange, impossible geometric shapes float in the distance. The atmosphere is both inviting and deeply unsettling.',
     isEnding: true,
-    endingType: 'neutral'
+    endingType: 'neutral',
+    memoryFragment: '(1) C - Câu chuyện này vẫn chưa kết thúc.'
   },
   'the_page': {
     id: 'the_page',
@@ -233,6 +233,9 @@ export const STORY_DATA: Record<string, StoryNode> = {
     choices: [
       { text: 'GAME OVER', nextNodeId: 'restart_node' }
     ],
+    isEnding: true,
+    endingType: 'bad',
+    memoryFragment: '(2) C - Có lẽ bạn nên nhìn kỹ hơn.',
     image: 'https://picsum.photos/seed/glass-reflection/1200/800',
     imagePrompt: 'A haunting reflection in a glass door. A tall, spindly creature with glowing blue eyes and obsidian skin stares back. In the background, a massive, hunched shadow is seen slithering into the room from the doorway. The sky outside is a violent red.'
   },
@@ -325,6 +328,7 @@ export const STORY_DATA: Record<string, StoryNode> = {
     text: 'Cảm giác duy nhất bây giờ bạn có thể cảm nhận được là đau đớn. Chiếc móc cắm thẳng vào lưng và xuyên qua, lộ hẳn một phần nhọn hoắt trước ngực.\n\nBạn đang bị kéo đi trên một hành lang tưởng chừng như vô tận. Máu đã chảy quá nhiều, bạn không còn đủ sức để gào thét hay dãy dụa.',
     isEnding: true,
     endingType: 'bad',
+    memoryFragment: '(3) B - Bóng tối đang nuốt chửng lấy bạn.',
     choices: [
       { text: 'GAME OVER', nextNodeId: 'downstairs_breakfast' }
     ],
@@ -347,6 +351,7 @@ export const STORY_DATA: Record<string, StoryNode> = {
     text: 'Bạn cố gắng lùi lại thật nhanh nhưng bỗng nhiên vấp phải thứ gì đó khiến bạn ngã ra sàn.\n\nCố gắng giẫy dụa bò dậy nhưng có thứ gì đó không đúng, Những thứ dưới sàn dường như đang sống lại và chúng đang tóm lấy bạn\n\nBạn đang bị kéo vào dưới sàn bởi thứ đó.\n\nTrong sự tuyệt vọng, bạn nghe thấy tiếng chân ngoài cửa rời đi, bạn cố gắng kêu cứu nhưng không hề có sự đáp lại.\n\nTrong những giây phút cuối cùng trước khi chìm vào đống máu thịt trên sàn, dường như bạn nghe thấy âm thanh của đứa trẻ.',
     isEnding: true,
     endingType: 'bad',
+    memoryFragment: '(4) O - Ở đây, không ai có thể nghe thấy bạn.',
     choices: [
       { text: 'GAME OVER', nextNodeId: 'downstairs_breakfast' }
     ],
@@ -422,6 +427,7 @@ export const STORY_DATA: Record<string, StoryNode> = {
     text: 'Khi bạn nhận ra thì đã quá muộn, không hề có sự đau đớn, không báo trước, bạn không cảm nhận được chút nào. Cơ thể bạn chỉ đơn giản là biến mất, từng phần từng phần một, tan biến trong không khí.',
     isEnding: true,
     endingType: 'bad',
+    memoryFragment: '(5) M - Mọi thứ chỉ là một phần của giấc mơ.',
     choices: [
       { text: 'GAME OVER', nextNodeId: 'downstairs_breakfast' }
     ],
@@ -650,6 +656,7 @@ export const STORY_DATA: Record<string, StoryNode> = {
     image: 'https://picsum.photos/seed/shatter-world/1200/800',
     isEnding: true,
     endingType: 'bad',
+    memoryFragment: '(6) P - Phá vỡ thực tại để tìm thấy sự thật.',
     imagePrompt: 'The entire world shattering like glass. Shards of reality flying everywhere as the boy dissolves into the void.'
   },
   'press_shard_attempt': {
@@ -814,7 +821,8 @@ export const STORY_DATA: Record<string, StoryNode> = {
     image: 'https://picsum.photos/seed/creepy-mirror-return-final/1200/800',
     imagePrompt: 'A terrifying wide shot of the bathroom. The monstrous reflection is leaning out of the cracked mirror, holding the glowing shard like a trophy. Dark, oily shadows are rapidly rising from the floor, coiling around the boy\'s legs like snakes.',
     isEnding: true,
-    endingType: 'bad'
+    endingType: 'bad',
+    memoryFragment: '(7) K - Kẻ đứng sau tấm gương... hắn đang cười.'
   },
   'red_world_call_help': {
     id: 'red_world_call_help',
@@ -872,7 +880,8 @@ export const STORY_DATA: Record<string, StoryNode> = {
     image: 'https://picsum.photos/seed/cabinet-ending/1200/800',
     imagePrompt: 'A small, dark cabinet drawer being forced shut. The boy\'s terrified face is visible inside before it closes.',
     isEnding: true,
-    endingType: 'bad'
+    endingType: 'bad',
+    memoryFragment: '(8) G - Gương mặt ấy... thật quen thuộc.'
   },
   'red_world_ignore_window': {
     id: 'red_world_ignore_window',
@@ -906,7 +915,8 @@ export const STORY_DATA: Record<string, StoryNode> = {
     image: 'https://picsum.photos/seed/uncle-candy-ending/1200/800',
     imagePrompt: 'The man\'s face looming close to the boy, offering a colorful lollipop. The scene fades to black.',
     isEnding: true,
-    endingType: 'bad'
+    endingType: 'bad',
+    memoryFragment: '(9) N - Những gì bạn thấy... chỉ là một phần sự thật.'
   },
   'red_world_door_gap': {
     id: 'red_world_door_gap',
@@ -960,7 +970,8 @@ export const STORY_DATA: Record<string, StoryNode> = {
     image: 'https://picsum.photos/seed/shush-whisper/1200/800',
     imagePrompt: 'A large hand covering the boy\'s mouth from behind. The scene is dark and terrifying.',
     isEnding: true,
-    endingType: 'bad'
+    endingType: 'bad',
+    memoryFragment: '(10) K - Không có lối thoát... trừ khi bạn đối mặt với nó.'
   },
   'red_world_hide_under_bed': {
     id: 'red_world_hide_under_bed',
@@ -1052,6 +1063,9 @@ export const STORY_DATA: Record<string, StoryNode> = {
     choices: [
       { text: 'GAME OVER', nextNodeId: 'restart_node' }
     ],
+    isEnding: true,
+    endingType: 'bad',
+    memoryFragment: '(11) K - Ký ức vỡ vụn... như những mảnh gương.',
     image: 'https://picsum.photos/seed/shadow-face-crack/1200/800',
     imagePrompt: 'A terrifying close-up of a face cracking open, revealing a dark void within. The expression is one of malicious glee.'
   },
@@ -1226,6 +1240,9 @@ export const STORY_DATA: Record<string, StoryNode> = {
     choices: [
       { text: 'GAME OVER', nextNodeId: 'restart_node' }
     ],
+    isEnding: true,
+    endingType: 'bad',
+    memoryFragment: '(12) C - Cuối cùng... mọi thứ sẽ kết thúc.',
     image: 'https://picsum.photos/seed/voice/1200/800',
     imagePrompt: 'A dark, abstract scene representing the fading consciousness of the boy. A mysterious voice echoes in the darkness.'
   },
@@ -1306,7 +1323,100 @@ export const STORY_DATA: Record<string, StoryNode> = {
     choices: [
       { text: 'Làm lại', nextNodeId: 'restart_node' }
     ],
+    isEnding: true,
+    endingType: 'neutral',
+    memoryFragment: '(13) B - Bước tiếp theo... là do bạn quyết định.',
     image: 'https://picsum.photos/seed/crepe-breakfast/1200/800',
     imagePrompt: 'A delicious breakfast of crepes on a sunny table. The scene is idyllic, but there is an underlying sense of unease from the mysterious voice.'
+  },
+  'secret_ending_start': {
+    id: 'secret_ending_start',
+    title: 'Sự Thật Cuối Cùng',
+    text: 'Chào các bạn.\nNếu các bạn đã tới được đây sau khi thu thập đủ 13 mảnh ghép thì mình nghĩ mọi người cũng đã có ý tưởng nhất định về cốt truyện của game đúng không.\n\nCâu chuyện bắt đầu với nhân vật chính là một cậu bé 8 tuổi, bố mẹ nghiện ma túy, bị bạo hành, đánh đập, bị lạm dụng bởi người chú. Không được hưởng sự yêu thương, không được đến trường, cô độc trong căn nhà với chú gấu bông - món quà của mẹ, nay đã bị vấy bẩn bởi máu của cậu sau những trận đòn roi, quả bóng chày - món quà của bố, phải giấu phía sau bồn cầu. Hai thứ đó là 2 thứ duy nhất minh chứng cho sự yêu thương trong quá khứ của bố mẹ và là người bạn duy nhất của cậu.\n\nCho đến một ngày, cậu gặp một người bạn mới.\nMột mảnh gương vỡ cậu tìm được dưới gầm giường, hình ảnh phản chiếu của cậu. Cậu coi đó là người bạn thân của mình, người luôn lắng nghe, luôn ở bên cậu, không bao giờ quay lưng lại với cậu.\n\nThế giới màu đỏ, sạch sẽ và thơm tho, đó là giấc mơ của cậu. Trong giấc mơ đó cất giấu những thứ có ảnh hưởng lớn nhất với cậu. Người chú, sự bạo lực của bố mẹ, quả bóng chày, chú gấu bông, và người bạn trong mảnh gương. Giấc mơ kéo dài với sự yên bình, chỉ cần cậu không đi xúc động những thứ khiến cơn ác mộng tiến đến. Nhưng giấc mơ đó cũng tràn đầy sự cô đơn.\n\nRồi một lần, sau những trận đòn roi, và cơn ác mộng người chú đem lại cậu lại trốn vào giấc mơ. Với sự ngây thơ và sự tin tưởng không cần lý do của một đứa trẻ, cậu đã gọi người bạn trong gương của mình tỉnh lại. Bây giờ cậu không còn cô đơn nữa.\n\nNhưng giấc mơ luôn có lúc phải tỉnh lại. Thế giới hiện thực mới là cơn ác mộng không bao giờ kết thúc. Người bạn của cậu đã tạo ra một thế giới trong gương, với mình cậu và không có cơn ác mộng nào có thể tiến vào. Và ở trong đó, ý nghĩ của cậu có thể quyết định mọi thứ.\n\nCậu sợ hãi người chú luôn nhìn trộm qua lỗ khóa, trốn dưới gầm giường chờ cậu chìm vào giấc ngủ, cậu muốn có những người bạn mới, những người bạn với những hình thù kỳ lạ và thú vị. Đôi khi những thứ khiến người lớn sợ hãi lại trở nên đáng yêu trong mắt đứa trẻ. Cậu mong muốn họ chờ ở đó, chơi với cậu khi cậu tiến đến.\n\nVà rồi, cậu mong muốn một thế giới tốt đẹp hơn, cậu nhờ người bạn trong gương tạo ra một giấc mơ tốt đẹp hơn nữa. Có thể, chỉ cần cậu cho phép.\n\nCậu chìm đắm vào giấc mơ đó, cậu không muốn tỉnh dậy nên ở đây không còn trời sáng nữa, và, có lẽ cậu không hề nhớ. Nhưng có một lần, cậu đã nói: "Bọn mình chỉ có một người được ở bên ngoài thôi...". Người bạn trong gương đã mặc kẹt tại thế giới này rất lâu rồi, một thế giới tối tăm không có ánh sáng, . . . và cô độc. Tình bạn chuyển biến thành sự hận thù, nó chỉ muốn thoát ra khỏi nơi này, hoặc, làm chủ nơi này.\n\nNó kéo từng phần nhỏ của cậu trở lại, từng phần nhỏ, để vẫn là "cậu". Nhưng không có đủ quyền hạn để thay đổi bất cứ thứ gì. Nó chỉ cần cố gắng, đến khi nào, phần bản thể trong nó lớn hơn phần đang chìm đắm trong giấc mơ kia, nó sẽ thành công. . .\n.\n.\n.\nCâu chuyện là vậy đó, một câu chuyện không mấy vui vẻ cho lắm. Nhưng cuối cùng cũng có một câu chuyện hợp lý cho những thứ tạp nham mình ném ra một cách ngẫu hứng vào tuần trước.\nHaizzzz.\nDù gì thì cũng cảm ơn các bạn đã tham gia, và đã chịu tìm tòi mọi thứ để đến được đây.\nCâu chuyện đến đây là hết. Chào các bạn.\n.\n.\n.',
+    choices: [
+      { text: 'Không phải!!!!!!', nextNodeId: 'secret_ending_not_this' }
+    ],
+    image: 'https://picsum.photos/seed/story-reveal/1200/800',
+    imagePrompt: 'A dark, cinematic room with a single spotlight on a small, blood-stained teddy bear and a baseball. In the background, a cracked mirror reflects a faint, ghostly light. The atmosphere is heavy with melancholy and hidden truths.'
+  },
+  'secret_ending_not_this': {
+    id: 'secret_ending_not_this',
+    title: '...',
+    text: 'Không phải gì cơ? Mọi thứ không phải thế này à.',
+    choices: [
+      { text: 'KHÔNG PHẢI !!!!', nextNodeId: 'secret_ending_want_more' }
+    ],
+    image: 'https://picsum.photos/seed/glitch-reality/1200/800',
+    imagePrompt: 'The previous idyllic scene starts to glitch and flicker, revealing a dark void underneath. The colors are distorted and unstable.'
+  },
+  'secret_ending_want_more': {
+    id: 'secret_ending_want_more',
+    title: '...',
+    text: 'Ý bạn là. . . Bạn không muốn mọi thứ kết thúc như thế này???',
+    choices: [
+      { text: 'ĐÚNG VẬY', nextNodeId: 'secret_ending_continue' }
+    ],
+    image: 'https://picsum.photos/seed/question-void/1200/800',
+    imagePrompt: 'A single, glowing question mark in the middle of a pitch-black void. The atmosphere is quiet and expectant.'
+  },
+  'secret_ending_continue': {
+    id: 'secret_ending_continue',
+    title: '...',
+    text: 'Ồ, vậy thì, chúng ta tiếp tục nào...',
+    choices: [
+      { text: 'QUAY LẠI', nextNodeId: 'secret_ending_return' }
+    ],
+    image: 'https://picsum.photos/seed/path-back/1200/800',
+    imagePrompt: 'A path of light forming in the darkness, leading back towards a familiar-looking door.'
+  },
+  'secret_ending_return': {
+    id: 'secret_ending_return',
+    title: 'Quay Lại',
+    text: 'Bạn quay trở lại phòng tắm, một tay ôm lấy chú gấu bông, một tay nắm lấy quả bóng chày ướt nhẹp, đứng trong thứ ánh sáng màu đỏ đầy yên bình ấy, bạn lên tiếng gọi người bạn của mình.\n\n"Này, cậu tới đây đi, mình có chuyện muốn nói"\n\nNgười bạn trong gương xuất hiện với hình ảnh một đứa trẻ 8 tuổi, y hệt bạn bây giờ. Với một gương mặt buồn bã và chán chường.\n\n"Ồ, cậu quay lại đây làm gì, mình tưởng cậu đã tỉnh dậy rồi và sẽ không bao giờ quay lại đây nữa chứ."',
+    choices: [
+      { text: 'Xin lỗi!', nextNodeId: 'secret_ending_apology' }
+    ],
+    image: 'https://picsum.photos/seed/mirror-friend-sad/1200/800',
+    imagePrompt: 'The boy standing in the red-tinted bathroom, holding his toys. His reflection in the mirror is a separate entity, looking down with a sad expression.'
+  },
+  'secret_ending_apology': {
+    id: 'secret_ending_apology',
+    title: 'Lời Xin Lỗi',
+    text: '"Xin lỗi"\n\n"Hả, xin lỗi vì điều gì cơ, mình mới là người phải xin lỗi chứ"\n\n"Do mình đã quên mất cậu, do mình đã nhốt cậu lại trong này"\n\n"Ồ, có sao đâu nhỉ, ai rồi cũng sẽ làm thế hết thôi, dù gì chúng ta từ đầu cũng đứng ở hai phía khác nhau rồi mà"\n\n"Tại sao lúc nào cậu cũng có thể lạc quan và vui vẻ như thế này được nhỉ"\n\n"Tại vì mình chẳng có gì cả, mình chẳng là gì cả, mình còn chẳng hề tồn tại, vậy thì, tại sao không vui vẻ và cố gắng tận hưởng từng chút một những gì mình đang có, tại sao lại không cố gắng để có được nhiều hơn."',
+    choices: [
+      { text: '"Cậu. . . Có muốn ra phía ngoài không"', nextNodeId: 'secret_ending_outside' }
+    ],
+    image: 'https://picsum.photos/seed/mirror-conversation/1200/800',
+    imagePrompt: 'A close-up of the mirror. The boy and his reflection are touching the glass from opposite sides. The lighting is soft and warm.'
+  },
+  'secret_ending_outside': {
+    id: 'secret_ending_outside',
+    title: 'Lựa Chọn',
+    text: '"Cậu. . . Có muốn ra phía ngoài không"\n\n"Phía ngoài? Ngoài giấc mơ á, cậu đừng đùa"\n\n"Không. . . Cậu là mình, mình là cậu, chỉ cần mình ở bên trong"\n\n"Nhưng. . . Vì sao, sau tất cả những gì mình đã làm"\n\n"Vì tất cả là lỗi của mình. Và. . . mình không đủ mạnh mẽ như cậu"\n\n"..."\n\n"Mình đã ở trong giấc mơ đó bao lâu rồi"\n\n"Tính từ lần cuối cùng cậu trở lại với bọn mình là 5 năm rồi"\n\n"Vậy là, cậu cũng ở trong này 5 năm, kẹt giữa tấm gương của 2 thế giới, và bóng tối. . ."\n\n"Ồ, cũng chẳng có gì, trước đó mình còn đâu có tồn tại, ít nhất. . . có thể suy nghĩ, có thể tự hỏi, có thể tưởng tượng vẫn hơn chứ. Những thứ mình tạo ra cho cậu. . . Ít nhất, mình cũng cảm nhận được 1 phần"\n\n"Mình xin lỗi. . ."\n\n"Thôi được rồi, với những gì mình đã làm với cậu thì coi như chúng ta hòa nhau đi"\n\n"Cậu thấy đấy, cậu mạnh mẽ hơn mình. Có lẽ. . . cậu sẽ vượt qua được cơn ác mộng phía ngoài. Còn mình thì. . . mình yếu đuối, mình hèn nhát. Mình. . . chỉ muốn được hạnh phúc"\n\n"Hạnh phúc của mình thì phải tự giành lấy chứ"\n\n"Đúng vậy, và cậu là mình, và cậu đủ sức để giành lấy hạnh phúc của cậu"\n\n"Thế nên là, cậu sẽ để mình ra ngoài". Người bạn trong gương nhìn về phía bạn, đôi mắt ánh lên ánh sáng mong đợi, gương mặt trẻ con toát ra sự vui sướng từ tận trong tâm hồn.\n\n"Bên ngoài. . . Không tuyệt vời như những gì cậu nghĩ đâu"\n\n"Không sao cả, mình biết rồi, ngồi đây và nhìn những cơn ác mộng của cậu, mình đã hiểu. Nhưng mà, bên ngoài, ít nhất là có cơ hội để giành lấy hạnh phúc thực sự của mình đúng không"\n\n"Thế nên mình mới nói, cậu thích hợp hơn mình". Bạn nở nụ cười, bước về phía tấm gương, trao cho cậu ta con gấu bông và quả bóng.\n\n"Chúc may mắn"\n\n"Chúc cậu hạnh phúc"\n\n"Cảm ơn"\n\n"Cảm ơn"\n.\n.\n.',
+    choices: [
+      { text: 'Thức giấc!!!!!', nextNodeId: 'secret_ending_wakeup' }
+    ],
+    image: 'https://picsum.photos/seed/mirror-swap/1200/800',
+    imagePrompt: 'The boy handing his teddy bear and baseball through the mirror to his reflection. The reflection is reaching out, eyes wide with hope. The glass seems to ripple like water.'
+  },
+  'secret_ending_wakeup': {
+    id: 'secret_ending_wakeup',
+    title: 'Thức Giấc',
+    text: 'Tiếng chuông báo thức vang lên, bạn với tay tắt nó đi, vươn người đón ánh nắng bên ngoài đang chiếu vào, tiếng bố mẹ nói chuyện dưới nhà, mùi bánh crepe bay lên tận phòng. Cô em gái lao vào phòng lôi bạn dậy, phía ngoài cửa sổ, những đứa trẻ đã xuất hiện ở đầu phố đang đến gọi hai anh em đi học. Vơ vội chiếc bánh cầm trên tay, chào bố mẹ, xoa đầu chú chó đang ngồi vẫy đuôi chờ bạn trước cửa nhà, bạn mở cửa bước về phía ánh nắng vàng rực rỡ. . .\n\n"Cậu. . . cũng đang có hạnh phúc của riêng mình đúng không"\n.\n.\n.\n"Cảm ơn"\n"Cảm ơn"',
+    choices: [
+      { text: 'Cảm ơn', nextNodeId: 'secret_ending_final_thanks' }
+    ],
+    image: 'https://picsum.photos/seed/true-morning/1200/800',
+    imagePrompt: 'A bright, warm, and realistic bedroom. Sunlight streams through the window. A young girl is laughing and pulling the boy out of bed. The atmosphere is full of life and joy.'
+  },
+  'secret_ending_final_thanks': {
+    id: 'secret_ending_final_thanks',
+    title: 'Lời Cảm Ơn',
+    text: '"CẢM ƠN"\n\nCảm ơn các bạn. Tất cả các bạn đã tới được đây. Các bạn tuyệt vời lắm đó. Mình rất rất rất tự hào về các bạn luôn!!!!!\n\nĐây là kết thúc trọn vẹn rồi đó, đoạn cuối văn mình kém quá không miêu tả được nó đẹp hơn ý UwU, hơi nuối tiếc một chút.\n\nDù sao thì, cảm ơn các bạn đã đồng hành với mình trong suốt chặng đường để tới được đây. Một câu chuyện tuyệt vời đã khép lại, mình tự đánh giá là vậy. Mặc dù có hơi lừa dối các bạn một chút về cái kết thực sự. Nhưng mà, với những cảm xúc bạn đạt được bây giờ, mình thấy mọi thứ là đáng giá đúng không. Một câu chuyện không hề dài, nhưng có nhiều thứ khiến ta phải quay đầu lại. Một cốt truyện không có gì mới, nhưng một happy ending cho một cuộc sống tồi tệ mà chúng ta đều có thể chấp nhận được. Tuyệt vời phải không. . .\n\nÀ mà các bạn có nhớ cảm xúc khi tìm được true ending này không, cảm xúc phải lật lại trò chơi và đọc cẩn thận từng dòng để tìm mảnh ghép, cảm xúc khi phải trải qua câu chuyện buồn của nhân vật chính, cảm xúc khi mọi người đều có được hạnh phúc cho mình. . .\n\nCác bạn muốn giữ lại những trải nghiệm đó cho bạn bè, người thân của mình không? vậy thì xin các bạn đừng spoil nhé, các bạn có thể down bức ảnh này về, nói với mọi người rằng, đây mới là kết thúc. Các bạn có thể nói với mọi người tất cả là cú lừa, mọi người hãy tìm câu trả lời thực sự. Nhưng. Xin đừng chụp màn hình bài post này, nó sẽ phá hủy trải nghiệm của mọi người đó, mọi người chỉ cần tìm đến sub reddit này. . . và mọi thứ không còn tuyệt vời như những gì bạn vừa trải nghiệm nữa. Các bạn cũng đừng dùng những từ như "true ending" hay "cái kết thực sự" các bạn hãy chỉ nói rằng "đó chưa phải là kết thúc". Đừng để mọi người biết về sự tồn tại của "true ending". Vì mọi người. . .\n\nCảm ơn các bạn!!!\n\nCúi chào',
+    choices: [],
+    isEnding: true,
+    endingType: 'good',
+    image: 'https://picsum.photos/seed/developer-thanks/1200/800',
+    imagePrompt: 'A simple, heartfelt "Thank You" written on a blackboard in a cozy room. A small, stuffed bear sits on a chair nearby. The lighting is warm and comforting.'
   }
 };

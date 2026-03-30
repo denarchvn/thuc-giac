@@ -13,4 +13,5 @@ export interface StoryNode {
   imagePrompt?: string;
   isEnding?: boolean;
   endingType?: 'good' | 'bad' | 'neutral';
+  memoryFragment?: string;
 }
