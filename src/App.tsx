@@ -72,7 +72,7 @@ export default function App() {
           characters.charAt(Math.floor(Math.random() * characters.length))
         ).join('');
         setHintText(randomHint);
-        setShowHint(true);
+        setShowCodeInput(true);
       }, 5000); // 5 seconds
       return () => clearTimeout(timer);
     }
@@ -249,37 +249,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Hint Notification */}
-      <AnimatePresence>
-        {showHint && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-lg"
-          >
-            <div className="bg-red-900/90 backdrop-blur-xl border border-red-500/30 p-6 rounded-2xl shadow-2xl text-center">
-              <div className="flex items-center justify-center gap-2 mb-2 text-red-400">
-                <Sparkles className="w-5 h-5" />
-                <span className="text-xs uppercase tracking-widest font-bold">Gợi ý giải mã</span>
-              </div>
-              <p className="text-white/90 text-sm mb-4 leading-relaxed">
-                Bạn đã thu thập đủ 13 mảnh ký ức. Hãy sử dụng chữ cái đầu của mỗi mảnh theo thứ tự để giải mã:
-              </p>
-              <div className="bg-black/40 p-3 rounded-lg font-mono text-xl tracking-[0.5em] text-red-500 font-bold">
-                {hintText}
-              </div>
-              <button 
-                onClick={() => setShowHint(false)}
-                className="mt-4 text-white/40 hover:text-white/60 text-xs uppercase tracking-widest transition-colors"
-              >
-                Đóng
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Memory Gallery Modal */}
       <AnimatePresence>
         {showGallery && (
@@ -336,7 +305,21 @@ export default function App() {
               className="max-w-md w-full glass-panel p-10 rounded-3xl border border-white/10 text-center"
             >
               <h2 className="text-2xl font-serif font-bold text-white mb-4">Giải Mã Ký Ức</h2>
-              <p className="text-white/60 text-sm mb-8">Ghép các chữ cái đầu của 13 mảnh ký ức để tìm ra mật mã cuối cùng.</p>
+              <p className="text-white/60 text-sm mb-6 leading-relaxed">
+                Ghép các chữ cái đầu của 13 mảnh ký ức để tìm ra mật mã cuối cùng.
+              </p>
+
+              {hintText && (
+                <div className="mb-8 p-4 bg-red-900/20 border border-red-500/20 rounded-2xl">
+                  <div className="flex items-center justify-center gap-2 mb-2 text-red-400">
+                    <Sparkles className="w-4 h-4" />
+                    <span className="text-[10px] uppercase tracking-widest font-bold">Gợi ý giải mã</span>
+                  </div>
+                  <div className="bg-black/40 p-3 rounded-lg font-mono text-lg tracking-[0.4em] text-red-500 font-bold">
+                    {hintText}
+                  </div>
+                </div>
+              )}
               
               <form onSubmit={handleCodeSubmit} className="space-y-6">
                 <div className="space-y-2">
