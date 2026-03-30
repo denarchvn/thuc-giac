@@ -9,25 +9,12 @@ import { GoogleGenAI } from "@google/genai";
 const imageCache: Record<string, string> = {};
 
 export default function App() {
-  const [currentNodeId, setCurrentNodeId] = useState<string>('ending_dream_voice');
+  const [currentNodeId, setCurrentNodeId] = useState<string>('start');
   const [isLoaded, setIsLoaded] = useState(false);
   const [bgImage, setBgImage] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isQuotaExceeded, setIsQuotaExceeded] = useState(false);
-  const [collectedMemories, setCollectedMemories] = useState<Record<number, { letter: string, text: string }>>({
-    1: { letter: 'C', text: 'Một bữa sáng bình thường...' },
-    2: { letter: 'C', text: 'Hình bóng trong gương...' },
-    3: { letter: 'B', text: 'Bóng tối đang nuốt chửng lấy bạn.' },
-    4: { letter: 'O', text: 'Đừng nhìn lại.' },
-    5: { letter: 'M', text: 'Mọi thứ đều là giả dối.' },
-    6: { letter: 'P', text: 'Phá vỡ thực tại.' },
-    7: { letter: 'K', text: 'Ký ức bị đánh cắp.' },
-    8: { letter: 'G', text: 'Gương mặt ấy... thật quen thuộc.' },
-    9: { letter: 'N', text: 'Người chú... hay là kẻ canh giữ?' },
-    10: { letter: 'K', text: 'Không được lên tiếng.' },
-    11: { letter: 'K', text: 'Kẻ đứng sau bức màn.' },
-    12: { letter: 'C', text: 'Con đường duy nhất là đối mặt.' }
-  });
+  const [collectedMemories, setCollectedMemories] = useState<Record<number, { letter: string, text: string }>>({});
   const [showGallery, setShowGallery] = useState(false);
   const [showCodeInput, setShowCodeInput] = useState(false);
   const [isDecodeUnlocked, setIsDecodeUnlocked] = useState(false);
